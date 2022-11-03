@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/NavBar';
+import Characters from './components/Characters';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+	// const [gifs, getGifs] = useState([]);
 
+	// const getFetch = () => {
+	// 	const apiKey = 'https://rickandmortyapi.com/api/character';
+	// 	fetch(apiKey)
+	// 		.then((response) => response.json())
+	// 		.then((resp) => getGifs(resp.results));
+	// };
+
+	// useEffect(() => {
+	// 	getFetch();
+	// }, []);
+
+	return (
+		<>
+			<Navbar title="Rick and Morty" />
+			<div className="container mt-5">
+				<Characters/>
+			</div>
+		</>
+	);
+}
 export default App;
