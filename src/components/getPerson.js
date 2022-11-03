@@ -1,6 +1,7 @@
 export default function getPerson() {
 	const apiURL = 'https://rickandmortyapi.com/api/character';
-	fetch(apiURL)
+	return (
+    fetch(apiURL)
 		.then((response) => response.json())
 		.then((resp) => {
 			const { data = [] } = resp;
@@ -10,5 +11,6 @@ export default function getPerson() {
 				title: personajes.name,
 			}));
 			return gifs;
-		});
+		})
+    );
 }

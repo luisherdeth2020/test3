@@ -4,7 +4,7 @@ import getPerson from './getPerson';
 const Characters = ({ personajes } = []) => {
 	const [gifs, getGifs] = useState([]);
 	useEffect(() => {
-		getPerson({}).then((person) => getGifs(person));
+		getPerson().then((person) => getGifs(person));
 	}, []);
 
 	return (
