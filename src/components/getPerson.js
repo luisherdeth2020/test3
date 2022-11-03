@@ -4,11 +4,12 @@ export default function getPerson() {
     fetch(apiURL)
 		.then((response) => response.json())
 		.then((resp) => {
-			const { data = [] } = resp;
+			const { results = [] } = resp;
 
-			const gifs = data.map((personajes) => ({
+			const gifs = results.map((personajes) => ({
 				url: personajes.image,
 				title: personajes.name,
+				location:personajes.location.name,
 			}));
 			return gifs;
 		})

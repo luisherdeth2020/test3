@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import getPerson from './getPerson';
 
-const Characters = ({ personajes } = []) => {
+const Characters = () => {
 	const [gifs, getGifs] = useState([]);
 	useEffect(() => {
 		getPerson().then((person) => getGifs(person));
 	}, []);
-
+    // console.log(gifs.image);
 	return (
 		<div className="row">
 			{gifs.map((person, index) => (
@@ -16,7 +16,7 @@ const Characters = ({ personajes } = []) => {
 						<div className="card-body">
 							<h5 className="card-title">{person.title}</h5>
 							<hr />
-							<p>location: {person.location.name}</p>
+							<p>location: {person.location}</p>
 						</div>
 					</div>
 				</div>
